@@ -1,0 +1,27 @@
+{
+  "name": "conga-bass",
+  "version": "0.0.1",
+  "description": "Conga.js bundle which adds Bass.js to a project",
+  "directories": {
+    "test": "test"
+  },
+  "main": "",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/congajs/conga-bass.git"
+  },
+  "keywords": [
+
+  ],
+  "author": "Marc Roulias",
+  "license": "MIT",
+  "dependencies": {
+    "bass": "*"
+  },
+  "devDependencies": {
+  },
+  "readmeFilename": "README.md"
+}

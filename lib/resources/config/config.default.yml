@@ -1,0 +1,24 @@
+# bass odm
+bass:
+
+    # the adapters
+    adapters:
+        # - bass-mongodb
+
+    # the db connections
+    connections:
+
+        # mongodb.default:
+        #     adapter:  bass-mongodb
+        #     database: %mongodb.database%
+        #     host:     %mongodb.host%
+        #     port:     %mongodb.port%
+
+    # the managers
+    managers:
+
+        # mongodb.default:
+        #     adapter:    bass-mongodb
+        #     connection: mongodb.default
+        #     documents:
+        #         demo-bundle: demo-bundle:model

@@ -1,0 +1,11 @@
+parameters:
+
+    bass.listener.constructor: conga-bass:bass
+
+services:
+
+    # the bass kernel listener
+    bass.listener:
+        constructor: "%bass.listener.constructor%"
+        tags:
+            - { name: kernel.event, event: kernel.compile, method: onKernelCompile, priority: 1 }
