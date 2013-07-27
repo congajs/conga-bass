@@ -1,6 +1,6 @@
 {
   "name": "conga-bass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Conga.js bundle which adds Bass.js to a project",
   "directories": {
     "test": "test"
