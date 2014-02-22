@@ -22,3 +22,9 @@ bass:
         #     connection: mongodb.default
         #     documents:
         #         demo-bundle: demo-bundle:model
+
+    # logging config
+    logging:
+
+        # default logger
+        logger: '@logger'
