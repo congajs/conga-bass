@@ -27,4 +27,4 @@ bass:
     logging:
 
         # default logger
-        logger: '@logger'
+        logger: '@logger.default'
