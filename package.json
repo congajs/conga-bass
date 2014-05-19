@@ -1,6 +1,6 @@
 {
   "name": "conga-bass",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Conga.js bundle which adds Bass.js to a project",
   "directories": {
     "test": "test"
@@ -25,7 +25,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "bass": "*"
+    "bass": "latest"
   },
   "devDependencies": {
   },
