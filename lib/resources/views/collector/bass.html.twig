@@ -1,0 +1,92 @@
+<style type="text/css">
+
+    #bass-collector > .queries {
+        list-style: none;
+    }
+
+    #bass-collector > .queries > .query {
+        padding-bottom: 30px;
+    }
+
+    #bass-collector > .queries > .query > div {
+        display: inline-block;
+        padding: 5px;
+        margin: 0 5px;
+    }
+    #bass-collector > .queries > .query > div:first-child {
+        margin-left: 0;
+    }
+
+    #bass-collector > .queries > .query > .time {
+        color: darkgoldenrod;
+    }
+
+    #bass-collector > .queries > .query > .adapter {
+        background-color: darkslategray;
+        color: #ffffff;
+        margin-right: 10px;
+    }
+
+    #bass-collector > .queries > .query > .json {
+        background-color: #fff;
+    }
+
+    .syntax-highlight {
+        outline: 1px solid #ccc;
+        padding: 15px;
+        margin: 5px 0;
+    }
+    .syntax-highlight .string { color: green; }
+    .syntax-highlight .number { color: darkorange; }
+    .syntax-highlight .boolean { color: blue; }
+    .syntax-highlight .null { color: magenta; }
+    .syntax-highlight .key { color: red; }
+
+</style>
+
+<div id="bass-collector">
+    <ul class="queries">
+        {% for query in data.queries %}
+            <li class="query">
+                <div class="adapter">{{ query.adapter }}</div>
+                <div class="time">
+                    {{ query.date|date('g:i:sa') }} @
+                    <span class="milliseconds">{{ (query.date|date('u') / 1000)|round(3, 'floor') }}ms</span>
+                </div>
+                <div class="query">{{ query.document }}.{{ query.name }}</div>
+                <pre class="json" data-json="{{ query.data|json_encode|e('html_attr') }}">{{ query.pretty }}</pre>
+            </li>
+        {% else %}
+            <li class="no-query">No Queries</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+    /* https://stackoverflow.com/questions/4810841/how-can-i-pretty-print-json-using-javascript */
+    function syntaxHighlight(json) {
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+            var cls = 'number';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'key';
+                } else {
+                    cls = 'string';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'boolean';
+            } else if (/null/.test(match)) {
+                cls = 'null';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+        });
+    }
+
+    document.querySelectorAll('#bass-collector > .queries > .query > .json').forEach(function(node) {
+        node.className += ' syntax-highlight';
+        node.innerHTML = syntaxHighlight(node.innerHTML);
+    });
+
+</script>

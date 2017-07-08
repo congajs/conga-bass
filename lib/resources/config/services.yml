@@ -8,4 +8,16 @@ services:
     bass.listener:
         constructor: "%bass.listener.constructor%"
         tags:
+            # respond to kernel.compile so we can build bass using the conga configuration object
+            # and initialize everything in the global service container
             - { name: kernel.event, event: kernel.compile, method: onKernelCompile, priority: 1 }
+
+            # respond to the pre_controller so we can wrap the bass service into a request scope
+            # this needs to happen before other pre_controller events or they won't have access to the wrapped proxy
+            - { name: kernel.event, event: kernel.pre_controller, method: onPreController, priority: -9999999999999999 }
+
+    bass.profiler.collector:
+        scope: request
+        constructor: conga-bass:collector/BassDataCollector
+        tags:
+            - { name: profiler.data_collector, priority: 4 }

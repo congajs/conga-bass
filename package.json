@@ -13,21 +13,19 @@
     "type": "git",
     "url": "git://github.com/congajs/conga-bass.git"
   },
-  "keywords": [
-
-  ],
+  "keywords": [],
   "author": "Marc Roulias",
   "contributors": [
-		{
-			"name": "Anthony Matarazzo" ,
-			"email": "email@anthonymatarazzo.com"
-		}
+    {
+      "name": "Anthony Matarazzo",
+      "email": "email@anthonymatarazzo.com"
+    }
   ],
   "license": "MIT",
   "dependencies": {
-    "bass": "1.0.2"
+    "bass": "1.0.2",
+    "conga-profiler": "^0.0.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "readmeFilename": "README.md"
 }
