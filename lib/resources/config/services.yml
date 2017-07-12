@@ -12,9 +12,8 @@ services:
             # and initialize everything in the global service container
             - { name: kernel.event, event: kernel.compile, method: onKernelCompile, priority: 1 }
 
-            # respond to the pre_controller so we can wrap the bass service into a request scope
-            # this needs to happen before other pre_controller events or they won't have access to the wrapped proxy
-            - { name: kernel.event, event: kernel.pre_controller, method: onPreController, priority: -9999999999999999 }
+            # respond to the request_scope event so we can wrap the bass service into a request scope
+            - { name: kernel.event, event: kernel.request_scope, method: onRequestScope, priority: -1 }
 
     bass.profiler.collector:
         scope: request
