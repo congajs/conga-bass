@@ -1,6 +1,6 @@
 {
-  "name": "conga-bass",
-  "version": "0.0.12",
+  "name": "@conga/framework-bass",
+  "version": "2.0.0-dev",
   "description": "Conga.js bundle which adds Bass.js to a project",
   "directories": {
     "test": "test"
@@ -13,21 +13,21 @@
     "type": "git",
     "url": "git://github.com/congajs/conga-bass.git"
   },
-  "keywords": [
-
-  ],
+  "keywords": [],
   "author": "Marc Roulias",
   "contributors": [
-		{
-			"name": "Anthony Matarazzo" ,
-			"email": "email@anthonymatarazzo.com"
-		}
+    {
+      "name": "Anthony Matarazzo",
+      "email": "email@anthonymatarazzo.com"
+    }
   ],
   "license": "MIT",
   "dependencies": {
-    "bass": "1.0.2"
+    "bass": "1.0.2",
+    "csvtojson": "^1.1.7",
+    "glob": "^7.1.2",
+    "stream-json": "^0.5.2"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "readmeFilename": "README.md"
 }

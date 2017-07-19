@@ -1,6 +1,6 @@
 parameters:
 
-    bass.listener.constructor: conga-bass:bass
+    bass.listener.constructor: "@conga/framework-bass:bass"
 
 services:
 

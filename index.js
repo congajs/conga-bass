@@ -1,6 +1,11 @@
 module.exports = {
 
+    AbstractFixture: require('./lib/fixture/AbstractFixture') ,
+    
 	Bass: {
+
+
+
 		Module: require('bass') ,
 
 		Query: require('./node_modules/bass/lib/query') ,
