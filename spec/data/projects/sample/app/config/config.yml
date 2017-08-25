@@ -1,0 +1,24 @@
+imports:
+    - { resource : parameters.yml }
+    - { resource : bundles.yml }
+
+framework:
+    app:
+        host: "%app.http.host%"
+        port: "%app.http.port%"
+
+bass:
+  adapters:
+      - bass-nedb
+
+  connections:
+      default:
+          adapter: bass-nedb
+          #directory: "%kernel.var_path%/data/bass"
+
+  managers:
+      default:
+          adapter: bass-nedb
+          connection: default
+          documents:
+              session: demo-bundle:model/TestDocument.js

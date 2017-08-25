@@ -1,7 +1,14 @@
 # ide
 .settings
 .project
+.DS_Store
 
 # node/npm
 node_modules
 npm-debug.log
+package-lock.json
+
+# tests
+spec/data/projects/sample/var/*
+!spec/data/projects/sample/app/logs/.empty
+spec/data/projects/sample/app/logs/*

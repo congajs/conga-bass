@@ -1,12 +1,13 @@
 parameters:
 
-    bass.listener.constructor: conga-bass:bass
+    conga_bass.constructor: "@conga/framework-bass:CongaBass"
+    bass.fixture.runner.constructor: "@conga/framework-bass:fixture/FixtureRunner"
 
 services:
 
     # the bass kernel listener
-    bass.listener:
-        constructor: "%bass.listener.constructor%"
+    conga-bass:
+        constructor: "%conga_bass.constructor%"
         tags:
             # respond to kernel.compile so we can build bass using the conga configuration object
             # and initialize everything in the global service container
@@ -15,8 +16,14 @@ services:
             # respond to the request_scope event so we can wrap the bass service into a request scope
             - { name: kernel.event, event: kernel.request_scope, method: onRequestScope, priority: -1 }
 
+    # the profiler collector is used to collect data from bass for the profiler
     bass.profiler.collector:
         scope: request
-        constructor: conga-bass:collector/BassDataCollector
+        constructor: "@conga/framework-bass:collector/BassDataCollector"
         tags:
             - { name: profiler.data_collector, priority: 4 }
+
+    # the fixture runner
+    bass.fixture.runner:
+        constructor: "%bass.fixture.runner.constructor%"
+        arguments: ["@service_container"]

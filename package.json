@@ -1,13 +1,13 @@
 {
-  "name": "conga-bass",
-  "version": "0.0.12",
+  "name": "@conga/framework-bass",
+  "version": "2.0.2",
   "description": "Conga.js bundle which adds Bass.js to a project",
   "directories": {
     "test": "test"
   },
   "main": "",
   "scripts": {
-    "test": "mocha test/*.js"
+    "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "repository": {
     "type": "git",
@@ -22,10 +22,22 @@
     }
   ],
   "license": "MIT",
-  "dependencies": {
-    "bass": "1.0.2",
-    "conga-profiler": "^0.0.1"
+  "peerDependencies": {
+    "@conga/framework": "^2.0.0"
   },
-  "devDependencies": {},
+  "dependencies": {
+    "bass": "^1.0.0",
+    "csvtojson": "^1.1.7",
+    "glob": "^7.1.2",
+    "stream-json": "^0.5.2"
+  },
+  "devDependencies": {
+    "@conga/framework": "^2.0.0",
+    "@conga/framework-view-twig": "^2.0.0",
+    "@conga/framework-profiler": "congajs/conga-profiler",
+    "bass-nedb": "^1.0.0",
+    "jasmine": "^2.6.0",
+    "request": "^2.81.0"
+  },
   "readmeFilename": "README.md"
 }
