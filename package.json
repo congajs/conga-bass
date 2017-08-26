@@ -29,6 +29,7 @@
     "bass": "^1.0.0",
     "csvtojson": "^1.1.7",
     "glob": "^7.1.2",
+    "js-yaml": "^3.8.0",
     "stream-json": "^0.5.2"
   },
   "devDependencies": {
