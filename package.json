@@ -1,6 +1,6 @@
 {
   "name": "@conga/framework-bass",
-  "version": "2.0.2",
+  "version": "2.0.3-dev",
   "description": "Conga.js bundle which adds Bass.js to a project",
   "directories": {
     "test": "test"
@@ -35,6 +35,7 @@
   "devDependencies": {
     "@conga/framework": "^2.0.0",
     "@conga/framework-view-twig": "^2.0.0",
+    "@conga/framework-profiler": "congajs/conga-profiler",
     "bass-nedb": "^1.0.0",
     "jasmine": "^2.6.0",
     "request": "^2.81.0"
