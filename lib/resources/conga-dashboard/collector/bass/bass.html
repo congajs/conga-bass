@@ -1,0 +1,17 @@
+<div id="bass-collector">
+    <ul class="queries">
+        {% for query in data.queries %}
+            <li class="query">
+                <div class="adapter">{{ query.adapter }}</div>
+                <div class="time">
+                    {{ query.date|date('g:i:sa') }} @
+                    <span class="milliseconds">{{ (query.date|date('u') / 1000)|round(3, 'floor') }}ms</span>
+                </div>
+                <div class="query">{{ query.document }}.{{ query.name }}</div>
+                <pre class="json" data-json="{{ query.data|json_encode|e('html_attr') }}">{{ query.pretty }}</pre>
+            </li>
+        {% else %}
+            <li class="no-query">No Queries</li>
+        {% endfor %}
+    </ul>
+</div>
