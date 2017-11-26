@@ -1,3 +1,7 @@
-pre {
+#bass-collector pre {
     padding: 0;
+}
+
+#bass-collector .card {
+    margin-bottom: 30px;
 }
