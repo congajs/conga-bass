@@ -35,7 +35,7 @@
   "devDependencies": {
     "@conga/framework": "^2.0.0",
     "@conga/framework-view-twig": "^2.0.0",
-    "@conga/framework-profiler": "congajs/conga-profiler",
+    "@conga/framework-profiler": "^2.0.0",
     "bass-nedb": "^1.0.0",
     "jasmine": "^2.6.0",
     "request": "^2.81.0"
